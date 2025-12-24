@@ -12,3 +12,12 @@ def char_count(text: str) -> dict:
             else:
                 char_dict[char] = 1
     return char_dict
+
+def sort_on(items):
+    return items['num']
+
+def dict_sort(char_dict: dict) -> list:
+    char_list = [{'char': k, 'num': v} for k, v in char_dict.items()]
+    char_list.sort(key=sort_on, reverse=True)
+    return char_list
+    
